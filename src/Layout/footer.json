@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "CUSTOMER SERVICES",
+    "mes": [
+      "Help & contact Us",
+      "Return & Refunds",
+      "Online Stores",
+      "Terms & Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "COMPANY",
+    "mes": ["What We Do", "Available Services", "Latest Posts", "FAQs"]
+  },
+  {
+    "id": 3,
+    "title": "SOCIAL MEDIA",
+    "mes": ["Twitter", "Instagram", "Facebook", "Pinterest"]
+  }
+]
