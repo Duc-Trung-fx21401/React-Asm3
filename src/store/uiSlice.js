@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//lấy dữ liệu từ local
 const curUser = JSON.parse(localStorage.getItem("curUser"));
 
 //tạo slice để dùng cho giao diện Home
@@ -9,12 +10,14 @@ const uiSlice = createSlice({
     popupIsVisible: false,
     clickedId: "",
     clickedCategory: "",
-    IsLogin: curUser ? true : false,
+    // nếu curuser là đúng thì sẽ đăng nhập được
+    isLogin: curUser ? true : false,
     onLoginUser: curUser || {},
+    liveChatIsVisible: false,
   },
   reducers: {
-    //nhận 2 giá trị và trả về giá trị mới
-    //tạo những trường riêng để sau này lấy ra
+    //nhận giá trị và trả về giá trị mới
+    //tạo những trường riêng để sau này lấy ra trường tương ứng
     //Trường popup
     popup(state, action) {
       state.popupIsVisible = action.payload.popupIsVisible;
@@ -26,8 +29,11 @@ const uiSlice = createSlice({
     },
     // Trường login
     login(state, action) {
-      state.IsLogin = action.payload.IsLogin;
+      state.isLogin = action.payload.isLogin;
       state.onLoginUser = action.payload.onLoginUser;
+    },
+    livechat(state, action) {
+      state.liveChatIsVisible = !state.liveChatIsVisible;
     },
   },
 });

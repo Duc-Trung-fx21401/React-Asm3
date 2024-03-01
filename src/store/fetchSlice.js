@@ -27,6 +27,7 @@ const url =
   "https://firebasestorage.googleapis.com/v0/b/funix-subtitle.appspot.com/o/Boutique_products.json?alt=media&token=dc67a5ea-e3e0-479e-9eaf-5e01bcd09c74";
 
 //thao tác fetch products data
+// Lưu ý: phải sử dụng useEffect ở App để khi lần đầu chạy nó lấy data về các sản phẩm
 export const fetchProductsData = () => {
   return async (dispatch) => {
     try {
@@ -38,6 +39,7 @@ export const fetchProductsData = () => {
 
       const data = await response.json();
 
+      console.log(data, "data");
       //Lọc lấy 8 phần tử đầu tiên
       let filteredProducts = [];
       if (data.length > 8) {

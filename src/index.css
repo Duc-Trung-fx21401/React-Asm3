@@ -19,6 +19,10 @@ code {
   transform: translateX(-50%);
 }
 
+.navbar-container h6:hover {
+  color: #ffc107;
+}
+
 /* Banner */
 .banner {
   height: 60vh;
@@ -32,6 +36,115 @@ code {
   transform: translateY(-50%);
 }
 
-.categories a :hover {
-  opacity: 0.7;
+/* Effect */
+.navbar-container h6,
+.overlay h6,
+.product img,
+.related-products img,
+.remove,
+.detail-img img,
+.message i,
+.productlist img {
+  cursor: pointer;
+}
+
+.categories a:hover,
+.product img:hover,
+.related-products img:hover,
+.productlist img:hover {
+  opacity: 0.6;
+}
+
+/* HomePage */
+.product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.backdrop {
+  height: 100vh;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.75);
+}
+.overlay {
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  column-gap: 1rem;
+}
+
+.caret:hover,
+.overlay h6:hover,
+.remove:hover {
+  text-shadow: 0 0 2px;
+}
+
+/* Shop */
+.category h6 {
+  color: #6c757d;
+  cursor: pointer;
+}
+.category h6:hover {
+  color: #eeb714;
+}
+.productlist {
+  grid-template-columns: repeat(3, 1fr);
+}
+.productlist > div {
+  animation: zoom 1s ease-in-out forwards;
+}
+.login {
+  background-image: url("../public/img/banner1.jpg");
+  margin-top: 4rem;
+  background-position-x: center;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* chatbot */
+.livechat {
+  z-index: 20;
+  animation: shake 0.6s ease-out forwards;
+}
+.livechat img {
+  width: 2.5rem;
+}
+.livechat-icon {
+  z-index: 20;
+  transform: translate(-10%, -150%);
+}
+
+/* Hiệu ứng zoom lên rồi trả về kèm lắc */
+@keyframes shake {
+  0% {
+    opacity: 0;
+    transform: translate(10%, -50%) rotate(10deg) scale(0.6, 0.6);
+  }
+  25% {
+    opacity: 0.4;
+    transform: translate(10%, -50%) rotate(-15deg) scale(0.7, 0.7);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(10%, -50%) rotate(-10deg) scale(0.8, 0.8);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translate(10%, -50%) rotate(10deg) scale(0.9, 0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(10%, -50%) rotate(0deg) scale(1, 1);
+  }
+}
+.message input {
+  outline: none;
 }
