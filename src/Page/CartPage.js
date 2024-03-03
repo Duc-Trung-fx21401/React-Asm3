@@ -24,7 +24,6 @@ const CartPage = () => {
     }
   }, [cart]);
 
-  console.log(cart);
   return (
     <Container style={{ marginTop: 60 }}>
       <Row className="bg-light p-5 mb-5">
@@ -74,6 +73,7 @@ const CartPage = () => {
                       }}>
                       <i className="fa fa-solid fa-caret-left"></i>
                     </button>
+
                     {item.quantity}
                     <button
                       type="button"
@@ -125,6 +125,8 @@ const CartPage = () => {
             </div>
           }
         </Col>
+
+        {/* Tổng giá trị giỏ hàng*/}
         <Col md={4} className="bg-light p-4" style={{ height: "fit-content" }}>
           <h5 className="">CART TOTAL</h5>
           <div className="d-flex justify-content-between align-items-center border-bottom pb-3">
@@ -154,7 +156,6 @@ const CartPage = () => {
             <i className="fa fa-gift"></i>&nbsp;&nbsp;Apply coupon
           </button>
         </Col>
-        {/* Cart total */}
       </Row>
     </Container>
   );

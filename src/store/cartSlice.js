@@ -35,12 +35,11 @@ const cartSlice = createSlice({
       }
     },
     removeItemFromCart(state, action) {
-      const id = action.payload;
+      const id = action.payload; //id là id riêng cho từng item
       const existingItem = state.items.find((item) => item.id === id);
       state.totalQuantity--;
-      state.totalAmount = state.totalAmount - action.payload.price;
+      state.totalAmount = state.totalAmount - existingItem.price; //exsting là item hiện tại có price tương ứng
       state.isChanged = true;
-
       if (existingItem.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== id);
       } else {

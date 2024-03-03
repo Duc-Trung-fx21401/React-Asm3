@@ -100,6 +100,7 @@ const DetailPage = () => {
         </Col>
 
         {/* Thông tin và giá cả */}
+
         <Col md={7} className="ps-5">
           <h1>{product.name}</h1>
           <p className="text-secondary fs-4 my-4">
