@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../store/cartSlice";
@@ -11,18 +11,6 @@ const CartPage = () => {
   const dispatch = useDispatch();
   //lấy slice từ redux
   const cart = useSelector((state) => state.cart);
-
-  //update giỏ hàng vào local khi reload
-  useEffect(() => {
-    if (initial) {
-      initial = false;
-      return;
-    }
-
-    if (cart.isChange) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  }, [cart]);
 
   return (
     <Container style={{ marginTop: 60 }}>
