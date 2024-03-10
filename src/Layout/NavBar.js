@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Nav, Container, Navbar } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -19,7 +19,14 @@ const NavBar = () => {
 
   //Lấy trạng thái giỏ hàng từ redux
   const cart = useSelector((state) => state.cart);
-
+  
+ //update giỏ hàng vào local khi reload
+  useEffect(() => {
+    if (cart.items) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart]);
+  
   //Logout User
   const logoutHandler = () => {
     dispatch(
